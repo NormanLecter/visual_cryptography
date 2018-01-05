@@ -101,7 +101,7 @@ Jimp.read("black.bmp").then( (image) => {
           share2.setPixelColor(0x00000000, i + itForWidth + 1, j); 
           share2.setPixelColor(0x00000000, i + itForWidth, j + 1); 
           share1.setPixelColor(0xffffffff, i + itForWidth + 1, j + 1); 
-          itForHeight++;
+          itForHeight+2;
       }
     }
   }
@@ -111,7 +111,7 @@ share1.write("share1.bmp");
 share2.write("share2.bmp");
 for(let i = 0; i < 100; i++){
   for(let j = 0; j < 100; j++){
-  blackResult.setPixelColor(share2.getPixelColor(i,j)-share1.getPixelColor(i,j),i,j);
+  blackResult.setPixelColor(share1.getPixelColor(i,j)-share2.getPixelColor(i,j),i,j);
   }
 }
 blackResult.write("blackResult.bmp");
